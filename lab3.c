@@ -3,36 +3,41 @@
 #define n 500
 
 /*Funcion archivo*/
-void fArchivo(){
-
+void fArchivo()
+{
 FILE *archivo;
 char nombre_archivo[100];
 int ciclo=0;
 char caracteres[100];
-
 printf("Ingrese nombre archivo: ");
 
-	while(ciclo==0){
-	scanf("%s",nombre_archivo);
+
+while(ciclo==0)
+{
+	 scanf("%100[^\n]", nombre_archivo);
 	archivo = fopen(nombre_archivo,"r");
-		if(archivo==NULL){
+		if(archivo==NULL)
+        {
 		printf("Ingrese nombre archivo: ");
 		}
-		else{
+		else
+        {
 		break;
-		}	
-	}
+		}
+}
 
 printf("\nPrueba de que el archivo se ha leido correctamente.\n");
 printf("\nEl contenido del archivo es \n\n");
 
-	while (feof(archivo) == 0){
+	while (feof(archivo) == 0)
+    {
  	fgets(caracteres,100,archivo);
  	printf("%s",caracteres);
  	}
 }
 
-int main(){
+int main()
+{
 fArchivo();
 
 }
